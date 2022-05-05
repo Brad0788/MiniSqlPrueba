@@ -2,6 +2,7 @@
 #include <dirent.h>
 #include <vector>
 #include <string.h>
+#include <string>
 using namespace std;
 
 extern FILE * yyin;
@@ -44,7 +45,9 @@ int main(int argc, char*argv[]){
                 //printf("Si es %s\n", dir->d_name);
                 //strcpy(files[j], dir->d_name);
                 printf("Revisando archivo: %s\n", dir->d_name);
-                FILE * f = fopen(dir->d_name, "r");
+                string fullnam(argv[1]);
+                fullnam.append(dir->d_name);
+                FILE * f = fopen(fullnam.c_str(), "r");
                 if (f == NULL)
                 {
                     fprintf(stderr, "Couldn't open file %s \n", dir->d_name);
