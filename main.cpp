@@ -3,9 +3,9 @@
 using namespace std;
 
 extern FILE * yyin;
-int yylval;
+//int yylval;
 int yyparse();
-int yylex();
+//int yylex();
 
 
 int main(int argc, char*argv[]){
@@ -25,12 +25,12 @@ int main(int argc, char*argv[]){
     
     yyin = f;
 
-    //yyparse();
-    int token;
+    yyparse();
+    /*int token;
     while (token = yylex())
     {
         printf("Token type: %d\n",token);
-    }
+    }*/
     
 
     return 0;
